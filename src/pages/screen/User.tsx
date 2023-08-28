@@ -1,4 +1,6 @@
-import { MdAssignmentInd } from "react-icons/md";
+import { MdAssignmentInd, MdDoneAll } from "react-icons/md";
+import { BiSolidHandRight } from "react-icons/bi";
+import { SiProgress } from "react-icons/si";
 
 const User = () => {
   return (
@@ -6,15 +8,27 @@ const User = () => {
       {/*Assignment */}
       <div className="w-[390px] p-3 min-h-[250px] bg-[#4c3a3a] rounded-[20px]">
         <div className="w-full flex justify-between mb-2">
-          <span>Assignment panel</span>
+          <span>Assignment</span>
           <MdAssignmentInd className="text-[25px]" />
         </div>
-        <div className="w-full bg-[#e1b3c9] min-h-[100px] flex items-center justify-between p-1 rounded-md">
-          <span className="capitalize">project name</span>
+        <div className="w-full bg-[#e1b3c9] my-2 min-h-[100px] flex justify-between p-1 rounded-md">
+          <div>
+            <p className="uppercase text-[13px] text-[#4c3a3a]">project name</p>
+            <p className="capitalize text-[14px] text-[#9d3266]">high</p>
+            <p className="capitalize text-[16px]">franklin</p>
+            <br />
+            <div className="flex flex-1 w-[260px] justify-between ">
+              <p className="text-rose-500">12.00am</p>
+              {/* <div className="relative w-[150px] flex justify-end">
+                <span className="absolute bottom-6 left-9">move to progress</span> */}
+                <BiSolidHandRight className="text-[25px] cursor-pointer hover:scale-[1.08] hover:text-green-400 duration-300 transition-all" />
+              {/* </div> */}
+            </div>
+          </div>
           <img
             src=""
             alt="p"
-            className="w-[35px] h-[35px] rounded-md bg-green-200"
+            className="w-[95px] h-[110px] rounded-md bg-green-200"
           />
         </div>
       </div>
@@ -22,30 +36,14 @@ const User = () => {
       <div className="w-[390px] p-3 min-h-[250px] bg-[#4c3a3a] rounded-[20px]">
         <div className="w-full flex justify-between mb-2">
           <span>Ongoing</span>
-          <MdAssignmentInd className="text-[25px]" />
-        </div>
-        <div className="w-full bg-[#e1b3c9] flex items-center justify-between p-1 rounded-md">
-          <span className="capitalize">project name</span>
-          <img
-            src=""
-            alt="p"
-            className="w-[35px] h-[35px] rounded-md bg-green-200"
-          />
+          <SiProgress className="text-[25px]" />
         </div>
       </div>
-      {/*Assignment */}
+      {/*done */}
       <div className="w-[390px] p-3 min-h-[250px] bg-[#4c3a3a] rounded-[20px]">
         <div className="w-full flex justify-between mb-2">
           <span>Finished</span>
-          <MdAssignmentInd className="text-[25px]" />
-        </div>
-        <div className="w-full bg-[#e1b3c9] flex items-center justify-between p-1 rounded-md">
-          <span className="capitalize">project name</span>
-          <img
-            src=""
-            alt="p"
-            className="w-[35px] h-[35px] rounded-md bg-green-200"
-          />
+          <MdDoneAll className="text-[25px]" />
         </div>
       </div>
     </div>
