@@ -1,11 +1,11 @@
-import AdminSider from "../static/AdminSider"
+import AdminSider from "../static/AdminSider";
 
 const AdminLayout = () => {
   return (
     <div>
-        <AdminSider/>
+      <AdminSider />
     </div>
-  )
-}
+  );
+};
 
-export default AdminLayout
+export default AdminLayout;
