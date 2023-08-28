@@ -121,9 +121,13 @@ const ThirdPart = () => {
         <div className="w-full h-auto flex flex-col items-center bg-gradient-to-r from-purple-600 to-pink-300 transform rotate-38">
           <div className="w-[93%] h-[300px] flex items-center flex-col">
             <div className="mt-[80px] text-white font-bold text-[30px]">Get Started with project.io today</div>
-            <div className="w-[80%] h-[60px] bg-black mt-[20px]">
-              <div className="w-[400px] h-[40px] bg-white">Input</div>
-              <div>Button</div>
+            <div className="w-[50%] h-[60px] mt-[20px] items-center flex justify-between">
+              <div className="w-[400px] h-[50px] ">
+                <input type="text" className="w-full h-full rounded-[7px] placeholder:px-[2px] outline-none px-[30px]"  placeholder="Email"/>
+              </div>
+              <div className="w-[200px] h-[50px] flex justify-center items-center">
+                <button className="bg-blue-600 text-white rounded-[10px] px-[26px] py-[12px]">Sign up - it's free!</button>
+              </div>
             </div>
           </div>
         </div>
