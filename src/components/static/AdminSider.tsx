@@ -6,7 +6,6 @@ import { MdDoneAll } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
 import { changeToggle } from "../../global/globalFile";
 import { ImExit } from "react-icons/im";
-import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 
 const AdminSider = () => {
