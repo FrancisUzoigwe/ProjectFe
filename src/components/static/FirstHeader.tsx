@@ -16,7 +16,7 @@ const onScroll = () => {
 window.addEventListener("scroll", onScroll)
 
   return (
-    <div>
+    <div className="z-[-50]">
         {
             scroll? <div className="w-full h-[60px] flex justify-center items-center shadow-xl duration-300 fixed z-20 bg-white">
             <div className="w-[95%] h-[50px] justify-between items-center flex">
