@@ -9,7 +9,7 @@ const LandingPage = () => {
         <div className="flex h-[85vh] w-full justify-between items-center ">
           <div className=" flex-col justify-center w-[50%] h-full text-white ">
             {/* {This is the Left part of the screen} */}
-            <div className="text-5xl font-semibold mt-[90px] leading-tight">Trello brings all your tasks, teammates, and tools together</div>
+            <div className="text-5xl font-semibold mt-[90px] leading-tight">Project.io brings all your tasks, teammates, and tools together</div>
             <div className="text-2xl font-medium mt-[20px]">Keep everything in the same place-even if your team isn't.</div>
             {/* {This is the email part} */}
             <div className="flex w-[500px] h-auto justify-between items-center mt-[30px]">

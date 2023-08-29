@@ -1,15 +1,12 @@
-import { Outlet } from "react-router-dom"
-import MainHeader from "../static/MainHeader"
-import Footer from "../static/Footer"
+import React from "react";
+import Task from "../../pages/screen/Task";
 
 const MainLayout = () => {
   return (
     <div>
-        <MainHeader/>
-        <Outlet/>
-        <Footer/>
+      <Task />
     </div>
-  )
-}
+  );
+};
 
-export default MainLayout
+export default MainLayout;
