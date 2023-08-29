@@ -1,4 +1,3 @@
-
 const AdminSignupPage = () => {
   return (
     <div>AdminSignupPage</div>

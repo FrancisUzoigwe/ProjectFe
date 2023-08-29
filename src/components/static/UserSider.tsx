@@ -209,19 +209,22 @@ const UserSider = () => {
             <span className="ml-2">History</span>
           </div>
         ) : (
-          <div onClick={() => {
-            Swal.fire({
-              icon: "info",
-              text: "Only an Admin can View this Features",
-              timer: 3000,
-              timerProgressBar: true,
-              background: "#e1b3c9",
-              confirmButtonColor: "#9C446E",
-              iconColor: "#fa7cb9",
-              width: "800px",
-              heightAuto: true,
-            });
-          }} className="py-2 w-full  text-[14px] cursor-pointer duration-300 transition-all mt-3 flex justify-center hover:bg-[#e1b3c9]">
+          <div
+            onClick={() => {
+              Swal.fire({
+                icon: "info",
+                text: "Only an Admin can View this Features",
+                timer: 3000,
+                timerProgressBar: true,
+                background: "#e1b3c9",
+                confirmButtonColor: "#9C446E",
+                iconColor: "#fa7cb9",
+                width: "800px",
+                heightAuto: true,
+              });
+            }}
+            className="py-2 w-full  text-[14px] cursor-pointer duration-300 transition-all mt-3 flex justify-center hover:bg-[#e1b3c9]"
+          >
             <MdDoneAll className="text-[30px]" />
           </div>
         )}

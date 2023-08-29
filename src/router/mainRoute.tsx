@@ -5,7 +5,6 @@ import SigninPage from "../pages/auth/SigninPage";
 import SignupPage from "../pages/auth/SignupPage";
 import AdminSigninPage from "../pages/admin/AdminSigninPage";
 import AdminSignupPage from "../pages/admin/AdminSignupPage";
-import MainLayout from "../components/common/MainLayout";
 import Ask from "../pages/auth/Ask";
 import UserLayout from "../components/common/UserLayout";
 import User from "../pages/screen/User";

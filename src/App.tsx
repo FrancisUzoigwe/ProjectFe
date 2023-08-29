@@ -1,20 +1,25 @@
-import { RouterProvider } from "react-router-dom"
-import { mainRoute } from "./router/mainRoute"
-import {  store } from "./global/Store"
-import { Provider } from "react-redux"
-import {QueryClientProvider, QueryClient} from "@tanstack/react-query"
+import { RouterProvider } from "react-router-dom";
+import { mainRoute } from "./router/mainRoute";
+import { Store } from "./global/Store";
+import { Provider } from "react-redux";
+import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
+import persistStore from "redux-persist/es/persistStore";
+import { PersistGate } from "redux-persist/integration/react";
 
 const App = () => {
-  const client = new QueryClient()
+  const client = new QueryClient();
+  const persistor = persistStore(Store);
   return (
     <div className="font-Poppins">
-      <Provider store ={store}>
-      <QueryClientProvider client={client}>
-      <RouterProvider router={mainRoute}/>
-      </QueryClientProvider>
+      <Provider store={Store}>
+        <PersistGate loading={null} persistor={persistor}>
+          <QueryClientProvider client={client}>
+            <RouterProvider router={mainRoute} />
+          </QueryClientProvider>
+        </PersistGate>
       </Provider>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

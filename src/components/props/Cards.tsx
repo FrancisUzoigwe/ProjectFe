@@ -7,7 +7,15 @@ interface iProps {
   bigText?: string;
   smallText?: string;
 }
-const Cards: React.FC<iProps> = ({ image, bg, boxbg, imagecol , mainbg, bigText, smallText}) => {
+const Cards: React.FC<iProps> = ({
+  image,
+  bg,
+  boxbg,
+  imagecol,
+  mainbg,
+  bigText,
+  smallText,
+}) => {
   return (
     <div className="w-[350px] h-[250px] rounded-[10px] bg-white flex flex-col shadow-2xl ml-[20px] cursor-pointer hover:shadow-xl">
       <div
@@ -20,15 +28,17 @@ const Cards: React.FC<iProps> = ({ image, bg, boxbg, imagecol , mainbg, bigText,
             {image}
           </div>
         </div>
-          <div className="w-full h-[50px] flex flex-col items-center">
-            <div className="w-[90%] h-[35px]">
-              <div className="flex items-center font-semibold text-[20px]">{bigText}</div>
-              <div className="mt-[5px]">
-               {/* { Keep tasks in order, deadlines on track, and team members aligned with Trello.} */}
-               {smallText}
-              </div>
+        <div className="w-full h-[50px] flex flex-col items-center">
+          <div className="w-[90%] h-[35px]">
+            <div className="flex items-center font-semibold text-[20px]">
+              {bigText}
+            </div>
+            <div className="mt-[5px]">
+              {/* { Keep tasks in order, deadlines on track, and team members aligned with Trello.} */}
+              {smallText}
             </div>
           </div>
+        </div>
       </div>
     </div>
   );
