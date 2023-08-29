@@ -4,12 +4,14 @@ import { BsClipboard2Data } from "react-icons/bs";
 import { GiProgression } from "react-icons/gi";
 import { MdDoneAll } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
-import { changeToggle } from "../../global/globalFile";
+import { AdminlogOut, changeToggle } from "../../global/globalFile";
 import { ImExit } from "react-icons/im";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const AdminSider = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const toggle = useSelector((state: any) => state.toggle);
   const onChanglength = () => {
     dispatch(changeToggle(!toggle));
@@ -125,12 +127,35 @@ const AdminSider = () => {
           </Link>
         )}
         {!toggle ? (
-          <button className="ml-1 mt-[170px] w-[240px] bg-[#e1b3c9] py-2 hover:border hover:bg-[#f7b7d6] text-[16px] rounded-[20px]">
+          <button
+            onClick={() => {
+              dispatch(AdminlogOut());
+              navigate("/");
+              Swal.fire({
+                icon: "success",
+                text: "Successfully signed out",
+                timer: 3000,
+                timerProgressBar: true,
+              });
+            }}
+            className="ml-1 mt-[170px] w-[240px] bg-[#e1b3c9] py-2 hover:border hover:bg-[#f7b7d6] text-[16px] rounded-[20px]"
+          >
             logout
           </button>
         ) : (
           <div className="mt-[170px] w-[60px] rounded-full bg-[#e1b3c9] py-2 hover:border hover:bg-[#f7b7d6]  flex justify-center text-[25px]">
-            <ImExit />
+            <ImExit
+              onClick={() => {
+                dispatch(AdminlogOut());
+                navigate("/");
+                Swal.fire({
+                  icon: "success",
+                  text: "Successfully signed out",
+                  timer: 3000,
+                  timerProgressBar: true,
+                });
+              }}
+            />
           </div>
         )}
       </div>

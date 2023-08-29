@@ -19,9 +19,16 @@ const globalFile = createSlice({
     changeToggle: (state, { payload }) => {
       state.toggle = payload;
     },
+    AdminlogOut: (state) => {
+      state.admin = null;
+    },
+    UserlogOut: (state) => {
+      state.user = null;
+    },
   },
 });
 
-export const { userState, adminState, changeToggle } = globalFile.actions;
+export const { userState, UserlogOut, AdminlogOut, adminState, changeToggle } =
+  globalFile.actions;
 
 export default globalFile.reducer;
