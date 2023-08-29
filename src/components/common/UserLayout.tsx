@@ -5,7 +5,7 @@ import { Outlet } from "react-router-dom";
 const UserLayout = () => {
   const toggle = useSelector((state: any) => state.toggle);
   return (
-    <div className="bg-[#9C446E] relative">
+    <div className="bg-[#f48abd] relative">
       <UserSider />
       <div className="w-full flex justify-end ">
         <div
