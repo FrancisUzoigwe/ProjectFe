@@ -4,9 +4,7 @@ import { RxSpeakerLoud } from "react-icons/rx";
 import { BiSolidLeaf } from "react-icons/bi";
 import { FaTasks } from "react-icons/fa";
 import { FaMendeley } from "react-icons/fa";
-import hello from "../../assets/trello.webp"
-
-
+import hello from "../../assets/trello.webp";
 
 const ThirdPart = () => {
   return (
@@ -93,7 +91,7 @@ const ThirdPart = () => {
       <div className="w-full h-auto flex  flex-col items-center bg-blue-500">
         <div className="w-[80%] h-[400px] mt-[60px] mb-[20px] rounded-[10px] bg-white flex justify-between items-center">
           <div className="w-[60%] h-full flex justify-center items-center">
-            <img src={hello} alt=""  className="w-full  object-contain"/>
+            <img src={hello} alt="" className="w-full  object-contain" />
           </div>
           <div className="w-[35%] h-full flex flex-col flex-wrap">
             <div className=" w-[auto] h-[30px] items-center mt-[50px] ">
@@ -118,19 +116,27 @@ const ThirdPart = () => {
           </div>
         </div>
       </div>
-        <div className="w-full h-auto flex flex-col items-center bg-gradient-to-r from-purple-600 to-pink-300 transform rotate-38">
-          <div className="w-[93%] h-[300px] flex items-center flex-col">
-            <div className="mt-[80px] text-white font-bold text-[30px]">Get Started with project.io today</div>
-            <div className="w-[50%] h-[60px] mt-[20px] items-center flex justify-between">
-              <div className="w-[400px] h-[50px] ">
-                <input type="text" className="w-full h-full rounded-[7px] placeholder:px-[2px] outline-none px-[30px]"  placeholder="Email"/>
-              </div>
-              <div className="w-[200px] h-[50px] flex justify-center items-center">
-                <button className="bg-blue-600 text-white rounded-[10px] px-[26px] py-[12px]">Sign up - it's free!</button>
-              </div>
+      <div className="w-full h-auto flex flex-col items-center bg-gradient-to-r from-purple-600 to-pink-300 transform rotate-38">
+        <div className="w-[93%] h-[300px] flex items-center flex-col">
+          <div className="mt-[80px] text-white font-bold text-[30px]">
+            Get Started with project.io today
+          </div>
+          <div className="w-[50%] h-[60px] mt-[20px] items-center flex justify-between">
+            <div className="w-[400px] h-[50px] ">
+              <input
+                type="text"
+                className="w-full h-full rounded-[7px] placeholder:px-[2px] outline-none px-[30px]"
+                placeholder="Email"
+              />
+            </div>
+            <div className="w-[200px] h-[50px] flex justify-center items-center">
+              <button className="bg-blue-600 text-white rounded-[10px] px-[26px] py-[12px]">
+                Sign up - it's free!
+              </button>
             </div>
           </div>
         </div>
+      </div>
     </div>
   );
 };

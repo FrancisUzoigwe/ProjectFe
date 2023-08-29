@@ -5,11 +5,14 @@ import SigninPage from "../pages/auth/SigninPage";
 import SignupPage from "../pages/auth/SignupPage";
 import AdminSigninPage from "../pages/admin/AdminSigninPage";
 import AdminSignupPage from "../pages/admin/AdminSignupPage";
-import HomePage from "../pages/screen/HomePage";
-import MainLayout from "../components/common/MainLayout";
 import Ask from "../pages/auth/Ask";
 import UserLayout from "../components/common/UserLayout";
 import User from "../pages/screen/User";
+import Task from "../pages/screen/Task";
+import Ongoing from "../pages/screen/Ongoing";
+import History from "../pages/screen/History";
+import AdminLayout from "../components/common/AdminLayout";
+import ViewTask from "../pages/screen/ViewTask";
 
 export const mainRoute = createBrowserRouter([
   {
@@ -44,11 +47,26 @@ export const mainRoute = createBrowserRouter([
   },
   {
     path: "/access",
-    element: <MainLayout />,
+    element: <AdminLayout />,
     children: [
       {
         index: true,
-        element: <HomePage />,
+        element: <Task />,
+      },
+      {
+        element: <Ongoing />,
+        index: true,
+        path: "/access/ongoing",
+      },
+      {
+        element: <History />,
+        index: true,
+        path: "/access/done",
+      },
+      {
+        element: <ViewTask />,
+        index: true,
+        path: "/access/view-task",
       },
     ],
   },

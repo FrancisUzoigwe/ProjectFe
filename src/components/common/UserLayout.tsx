@@ -1,11 +1,21 @@
-import User from "../../pages/screen/User";
+import { useSelector } from "react-redux";
 import UserSider from "../static/UserSider";
+import { Outlet } from "react-router-dom";
 
 const UserLayout = () => {
+  const toggle = useSelector((state: any) => state.toggle);
   return (
-    <div className="w-full h-[100vh] flex justify-between">
+    <div className="bg-[#9C446E] relative">
       <UserSider />
-      <User />
+      <div className="w-full flex justify-end ">
+        <div
+          className={`w-[${
+            !toggle ? "calc(100vw-250px)" : "calc(100vw-70px)"
+          }] min-h-[100vh]`}
+        >
+          <Outlet />
+        </div>
+      </div>
     </div>
   );
 };
