@@ -8,6 +8,7 @@ import { adminRegister } from "../../apis/adminAuthAPI";
 import Swal from "sweetalert2";
 
 const AdminSignupPage = () => {
+  
   const navigate = useNavigate();
   const [myImage, setMyImage] = useState<string>(pics);
   const [myAvatar, setMyAvatar] = useState<string>("");
