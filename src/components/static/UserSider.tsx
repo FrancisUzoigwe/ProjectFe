@@ -48,11 +48,11 @@ const UserSider = () => {
                     <span>{data?.name}'s workspace</span>
                     <span>{data?.email}</span>
                   </div>
-                  <div className="hover:bg-[#e1b3c9] duration-300 transition-all p-2 mr-1 rounded-md">
-                    <BsArrow90DegLeft
-                      className=" text-[14px]"
-                      onClick={onChanglength}
-                    />
+                  <div
+                    className="hover:bg-[#e1b3c9] duration-300 transition-all p-2 mr-1 rounded-md"
+                    onClick={onChanglength}
+                  >
+                    <BsArrow90DegLeft className=" text-[14px]" />
                   </div>
                 </div>
               </div>
@@ -67,7 +67,8 @@ const UserSider = () => {
                 <div>
                   <div
                     key={data?._id}
-                    className="hover:bg-[#e1b3c9] duration-300 w-8 my-2 items-center flex flex-col transition-all p-2 mr-1 rounded-md"
+                    className="hover:bg-[#e1b3c9] duration-300 w-8 my-2 items-center flex flex-col transition-all p-2 mr-1 rounded-md "
+                    onClick={onChanglength}
                   >
                     <BsArrow90DegRight
                       className=" text-[14px]"
