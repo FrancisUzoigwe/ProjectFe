@@ -61,6 +61,44 @@ const SignupPage = () => {
       }
     });
   });
+
+  const [selectedLanguage, setSelectedLanguage] = useState("en");
+
+  const languageStrings: any = {
+    en: {
+      signUpText: "Register on Project.io",
+      namePlaceholder: "enter your name",
+      emailPlaceholder: "enter your email address",
+      passwordPlaceholder: "enter your password",
+      confirmPasswordPlaceholder: "retype password",
+      registerButton: "Register",
+      signInText: "Don't have an account?",
+      action: "Sign up here",
+    },
+    es: {
+      signUpText: "Regístrate en Project.io",
+      namePlaceholder: "Nombre",
+      emailPlaceholder: "Correo electrónico",
+      passwordPlaceholder: "Contraseña",
+      confirmPasswordPlaceholder: "Confirmar contraseña",
+      registerButton: "Registrarse",
+      signInText: "¿Ya tienes una cuenta? ",
+      action: "Inicia sesión aquí",
+    },
+    fr: {
+      signUpText: "Inscrivez-vous sur Project.io",
+      namePlaceholder: "Nom",
+      emailPlaceholder: "E-mail",
+      passwordPlaceholder: "Mot de passe",
+      confirmPasswordPlaceholder: "Confirmez le mot de passe",
+      registerButton: "S'inscrire",
+      signInText: "Vous avez déjà un compte ?",
+      action: "Connectez-vous ici",
+    },
+  };
+
+  const selectedStrings = languageStrings[selectedLanguage];
+
   return (
     <div className="flex min-h-[100vh] bg-gradient-to-r from-purple-600 to-pink-300 transform rotate-38">
       <div className="flex-1 flex-col justify-end w-full items-center flex mb-2">
@@ -71,7 +109,7 @@ const SignupPage = () => {
           className="min-h-[400px] w-[500px] bg-gradient-to-r from-purple-50 via-purple-200 to-purple-50 opacity-95 rounded-[40px] items-center flex flex-col shadow-lg py-5 px-4"
         >
           <div className="font-bold text-2xl text-gray-400 my-3">
-            Register on Project.io
+            {selectedStrings.signUpText}
           </div>
           <div className="w-[200px] relative h-[200px] overflow-hidden object-cover border rounded-[20px]">
             <img
@@ -93,7 +131,7 @@ const SignupPage = () => {
             onChange={handleUserImage}
           />
           <input
-            placeholder="enter your name"
+            placeholder={selectedStrings.namePlaceholder}
             {...register("name")}
             className="w-full text-pink-300 border rounded-lg px-3 py-2 mt-2 outline-pink-300"
           />
@@ -103,7 +141,7 @@ const SignupPage = () => {
             </span>
           )}
           <input
-            placeholder="enter your email address"
+            placeholder={selectedStrings.emailPlaceholder}
             {...register("email")}
             className="w-full text-pink-300 border rounded-lg px-3 py-2 mt-3 outline-pink-300"
           />
@@ -113,7 +151,7 @@ const SignupPage = () => {
             </span>
           )}
           <input
-            placeholder="confirm your password"
+            placeholder={selectedStrings.passwordPlaceholder}
             {...register("password")}
             className="w-full text-pink-300 border rounded-lg px-3 py-2 mt-3 outline-pink-300"
           />
@@ -123,7 +161,7 @@ const SignupPage = () => {
             </span>
           )}
           <input
-            placeholder="retype password"
+            placeholder={selectedStrings.confirmPasswordPlaceholder}
             {...register("confirm")}
             className="w-full text-pink-300 border rounded-lg px-3 py-2 mt-3  outline-pink-300"
           />
@@ -137,18 +175,27 @@ const SignupPage = () => {
             className="py-4 px-[35px] mt-7 bg-gradient-to-r from-purple-600 to-pink-300 transform rotate-38 hover:rounded-[40px] text-pink-100 rounded-md hover:scale-[1.02] hover:cursor-pointer transition-all "
             type="submit"
           >
-            Register
+            {selectedStrings.registerButton}
           </button>
           <div className="mt-4">
             <div className="flex flex-col items-center text-sm">
-              <div>Already have an account?</div>
+              <div>{selectedStrings.signInText}</div>
               <Link to={`/signin`}>
                 <span className="font-bold text-purple-500 hover:cursor-pointer transition-all">
-                  Sign in here
+                  {selectedStrings.action}
                 </span>
               </Link>
             </div>
           </div>
+          <select
+            className="mt-4 border outline-none w-[200px] bg-purple-300 text-purple-100 px-3 py-2"
+            onChange={(e) => setSelectedLanguage(e.target.value)}
+            value={selectedLanguage}
+          >
+            <option value="en">English</option>
+            <option value="es">Spanish</option>
+            <option value="fr">French</option>
+          </select>
         </form>
       </div>
       <div className="w-[850px] flex items-center sticky top-0 h-[100vh]">

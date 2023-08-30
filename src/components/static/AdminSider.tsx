@@ -8,6 +8,7 @@ import { AdminlogOut, changeToggle } from "../../global/globalFile";
 import { ImExit } from "react-icons/im";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import { useAdminView } from "../../hooks/useAdminHook";
 
 const AdminSider = () => {
   const dispatch = useDispatch();
@@ -17,6 +18,7 @@ const AdminSider = () => {
     dispatch(changeToggle(!toggle));
   };
 
+  const { data, isLoading } = useAdminView();
   return (
     <div>
       <div
@@ -27,36 +29,58 @@ const AdminSider = () => {
         } duration-500 transition-all  text-white`}
       >
         {!toggle ? (
-          <div className="border-slate-300 border-b-[1px] border-l-[transparent] border-r-[transparent] pl-2 py-2 flex items-center">
-            <img
-              src=""
-              alt="p"
-              className="w-[35px] h-[35px] rounded-md bg-green-200"
-            />
-            <div className="flex flex-col text-[13px] ml-2 flex-1 ">
-              <span>Hello Mr.Edward</span>
-              <span>email.@gmail.com</span>
-            </div>
-            <div className="hover:bg-[#e1b3c9] duration-300 transition-all p-2 mr-1 rounded-md">
-              <BsArrow90DegLeft
-                className=" text-[14px]"
-                onClick={onChanglength}
-              />
-            </div>
+          <div>
+            {isLoading ? (
+              <div>...loading</div>
+            ) : (
+              <div>
+                <div
+                  key={data._id}
+                  className="border-slate-300 border-b-[1px] border-l-[transparent] border-r-[transparent] pl-2 py-2 flex items-center"
+                >
+                  <img
+                    src={data.adminAvatar}
+                    alt="p"
+                    className="w-[35px] h-[35px] rounded-md bg-green-200"
+                  />
+                  <div className="flex flex-col text-[13px] ml-2 flex-1 ">
+                    <span>Hello Mr.{data.adminName}</span>
+                    <span>{data.adminEmail}</span>
+                  </div>
+                  <div className="hover:bg-[#e1b3c9] duration-300 transition-all p-2 mr-1 rounded-md">
+                    <BsArrow90DegLeft
+                      className=" text-[14px]"
+                      onClick={onChanglength}
+                    />
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         ) : (
           <div>
-            <div className="hover:bg-[#e1b3c9] duration-300 w-8 my-2 items-center flex flex-col transition-all p-2 mr-1 rounded-md">
-              <BsArrow90DegRight
-                className=" text-[14px]"
-                onClick={onChanglength}
-              />
-            </div>
-            <img
-              src=""
-              alt="p"
-              className="w-[35px] h-[35px] rounded-md bg-green-200"
-            />
+            {isLoading ? (
+              <div>...loading</div>
+            ) : (
+              <div>
+                <div>
+                  <div
+                    key={data._id}
+                    className="hover:bg-[#e1b3c9] duration-300 w-8 my-2 items-center flex flex-col transition-all p-2 mr-1 rounded-md"
+                  >
+                    <BsArrow90DegRight
+                      className=" text-[14px]"
+                      onClick={onChanglength}
+                    />
+                  </div>
+                  <img
+                    src={data.adminAvatar}
+                    alt="p"
+                    className="w-[35px] h-[35px] rounded-md bg-green-200"
+                  />
+                </div>
+              </div>
+            )}
           </div>
         )}
 

@@ -36,3 +36,16 @@ export const readUser = async () => {
     console.log(error);
   }
 };
+
+export const readOneUser = async (id: string) => {
+  try {
+    return await axios
+      .get(`${URL}/${id}/view-one-user`)
+      .then((res: any) => {
+        console.log(id);
+        return res.data.data;
+      });
+  } catch (error) {
+    console.log(error);
+  }
+};
