@@ -36,3 +36,13 @@ export const adminRead = async () => {
     console.log(error);
   }
 };
+
+export const adminOneRead = async (id: string) => {
+  try {
+    return await axios.get(`${URL}/${id}/view-one-admin`).then((res: any) => {
+      return res.data.data;
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
