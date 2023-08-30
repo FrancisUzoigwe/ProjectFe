@@ -5,7 +5,6 @@ import SigninPage from "../pages/auth/SigninPage";
 import SignupPage from "../pages/auth/SignupPage";
 import AdminSigninPage from "../pages/admin/AdminSigninPage";
 import AdminSignupPage from "../pages/admin/AdminSignupPage";
-import Ask from "../pages/auth/Ask";
 import UserLayout from "../components/common/UserLayout";
 import User from "../pages/screen/User";
 import Task from "../pages/screen/Task";
@@ -13,6 +12,7 @@ import Ongoing from "../pages/screen/Ongoing";
 import History from "../pages/screen/History";
 import AdminLayout from "../components/common/AdminLayout";
 import ViewTask from "../pages/screen/ViewTask";
+import Ask from "../pages/auth/Ask";
 
 export const mainRoute = createBrowserRouter([
   {
@@ -27,7 +27,7 @@ export const mainRoute = createBrowserRouter([
   },
   {
     path: "/ask",
-    element: <Ask />,
+    element: <Ask/>
   },
   {
     path: "/signin",

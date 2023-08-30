@@ -38,7 +38,7 @@ const LandingPage = () => {
               </div> */}
             <div className="mt-[20px] flex items-center justify-between w-[120px] cursor-pointer" onClick={Toggled}>
               {
-                toggle? <div className="absolute bg-black duration-500 transition-all w-[1250px] ml-[-15px] h-[550px] mb-[400px] flex justify-center items-center text-white">
+                toggle? <div className="absolute bg-black duration-500 transition-all w-[1250px] ml-[-15px] h-[550px] mb-[400px] flex justify-center items-center text-white" onClick={Toggled}>
                 <div className="w-[700px] h-[400px] bg-white rounded-[20px] flex justify-center items-center">
                   <video src={videooh} className="overflow-hidden rounded-[20px]" loop autoPlay controls/>
                 </div>
