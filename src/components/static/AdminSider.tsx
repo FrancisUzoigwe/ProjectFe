@@ -35,17 +35,17 @@ const AdminSider = () => {
             ) : (
               <div>
                 <div
-                  key={data._id}
+                  key={data?._id}
                   className="border-slate-300 border-b-[1px] border-l-[transparent] border-r-[transparent] pl-2 py-2 flex items-center"
                 >
                   <img
-                    src={data.adminAvatar}
+                    src={data?.adminAvatar}
                     alt="p"
                     className="w-[35px] h-[35px] rounded-md bg-green-200"
                   />
                   <div className="flex flex-col text-[13px] ml-2 flex-1 ">
-                    <span>Hello Mr.{data.adminName}</span>
-                    <span>{data.adminEmail}</span>
+                    <span>Hello Mr.{data?.adminName}</span>
+                    <span>{data?.adminEmail}</span>
                   </div>
                   <div className="hover:bg-[#e1b3c9] duration-300 transition-all p-2 mr-1 rounded-md">
                     <BsArrow90DegLeft
