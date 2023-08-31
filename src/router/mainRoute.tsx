@@ -13,11 +13,17 @@ import History from "../pages/screen/History";
 import AdminLayout from "../components/common/AdminLayout";
 import ViewTask from "../pages/screen/ViewTask";
 import Ask from "../pages/auth/Ask";
+import PrivateRoute from "./PrivateRoute";
+import AdminRoute from "./AdminRoute";
 
 export const mainRoute = createBrowserRouter([
   {
     path: "/",
-    element: <FirstLayout />,
+    element: (
+      <PrivateRoute>
+        <FirstLayout />
+      </PrivateRoute>
+    ),
     children: [
       {
         index: true,
@@ -27,7 +33,7 @@ export const mainRoute = createBrowserRouter([
   },
   {
     path: "/ask",
-    element: <Ask/>
+    element: <Ask />,
   },
   {
     path: "/signin",
@@ -47,7 +53,11 @@ export const mainRoute = createBrowserRouter([
   },
   {
     path: "/access",
-    element: <AdminLayout />,
+    element: (
+      <AdminRoute>
+        <AdminLayout />
+      </AdminRoute>
+    ),
     children: [
       {
         index: true,

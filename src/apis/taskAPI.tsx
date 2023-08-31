@@ -2,11 +2,13 @@ import axios from "axios";
 
 const URL: string = "http://localhost:4500/api/task";
 
-export const createTask = async (data: any) => {
+export const createTask = async (id: string, data: any) => {
   try {
-    return await axios.post(`${URL}/create-task`, data).then((res: any) => {
-      return res.data.data;
-    });
+    return await axios
+      .post(`${URL}/${id}/create-task`, data)
+      .then((res: any) => {
+        return res.data.data;
+      });
   } catch (error) {
     console.log(error);
   }

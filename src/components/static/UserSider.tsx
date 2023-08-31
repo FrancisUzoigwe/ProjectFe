@@ -4,21 +4,16 @@ import { BsClipboard2Data } from "react-icons/bs";
 import { GiProgression } from "react-icons/gi";
 import { MdDoneAll } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
-import { UserlogOut, changeToggle } from "../../global/globalFile";
+import { changeToggle } from "../../global/globalFile";
 import { ImExit } from "react-icons/im";
 import Swal from "sweetalert2";
-import { useReadUser } from "../../hooks/useUserAuthHook";
-import { useNavigate } from "react-router-dom";
 
 const UserSider = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const toggle = useSelector((state: any) => state.toggle);
   const onChanglength = () => {
     dispatch(changeToggle(!toggle));
   };
-
-  const { data, isLoading } = useReadUser();
 
   return (
     <div>
@@ -30,59 +25,36 @@ const UserSider = () => {
         } duration-500 transition-all  text-white`}
       >
         {!toggle ? (
-          <div>
-            {isLoading ? (
-              <div>...loading</div>
-            ) : (
-              <div>
-                <div
-                  key={data?._id}
-                  className="border-slate-300 border-b-[1px] border-l-[transparent] border-r-[transparent] pl-2 py-2 flex items-center"
-                >
-                  <img
-                    src={data?.avatar}
-                    alt="p"
-                    className="w-[35px] h-[35px] rounded-md"
-                  />
-                  <div className="flex flex-col text-[13px] ml-2 flex-1 ">
-                    <span>{data?.name}'s workspace</span>
-                    <span>{data?.email}</span>
-                  </div>
-                  <div
-                    className="hover:bg-[#e1b3c9] duration-300 transition-all p-2 mr-1 rounded-md"
-                    onClick={onChanglength}
-                  >
-                    <BsArrow90DegLeft className=" text-[14px]" />
-                  </div>
-                </div>
-              </div>
-            )}
+          <div className="border-slate-300 border-b-[1px] border-l-[transparent] border-r-[transparent] pl-2 py-2 flex items-center">
+            <img
+              src=""
+              alt="p"
+              className="w-[35px] h-[35px] rounded-md bg-green-200"
+            />
+            <div className="flex flex-col text-[13px] ml-2 flex-1 ">
+              <span>Jemima's workspace</span>
+              <span>email.@gmail.com</span>
+            </div>
+            <div className="hover:bg-[#e1b3c9] duration-300 transition-all p-2 mr-1 rounded-md">
+              <BsArrow90DegLeft
+                className=" text-[14px]"
+                onClick={onChanglength}
+              />
+            </div>
           </div>
         ) : (
           <div>
-            {isLoading ? (
-              <div>...loading</div>
-            ) : (
-              <div>
-                <div>
-                  <div
-                    key={data?._id}
-                    className="hover:bg-[#e1b3c9] duration-300 w-8 my-2 items-center flex flex-col transition-all p-2 mr-1 rounded-md "
-                    onClick={onChanglength}
-                  >
-                    <BsArrow90DegRight
-                      className=" text-[14px]"
-                      onClick={onChanglength}
-                    />
-                  </div>
-                  <img
-                    src={data?.avatar}
-                    alt="p"
-                    className="w-[35px] h-[35px] rounded-md bg-green-200"
-                  />
-                </div>
-              </div>
-            )}
+            <div className="hover:bg-[#e1b3c9] duration-300 w-8 my-2 items-center flex flex-col transition-all p-2 mr-1 rounded-md">
+              <BsArrow90DegRight
+                className=" text-[14px]"
+                onClick={onChanglength}
+              />
+            </div>
+            <img
+              src=""
+              alt="p"
+              className="w-[35px] h-[35px] rounded-md bg-green-200"
+            />
           </div>
         )}
 
@@ -258,23 +230,11 @@ const UserSider = () => {
         )}
         {/* <div className="border-[silver] h-[50px] flex justify-center items-center pt-2 w-full border"> */}
         {!toggle ? (
-          <button
-            onClick={() => {
-              dispatch(UserlogOut());
-              navigate("/");
-            }}
-            className="ml-1 mt-[170px] w-[240px] bg-[#e1b3c9] py-2 hover:border hover:bg-[#f7b7d6] text-[16px] rounded-[20px]"
-          >
+          <button className="ml-1 mt-[170px] w-[240px] bg-[#e1b3c9] py-2 hover:border hover:bg-[#f7b7d6] text-[16px] rounded-[20px]">
             logout
           </button>
         ) : (
-          <div
-            onClick={() => {
-              dispatch(UserlogOut());
-              navigate("/");
-            }}
-            className="mt-[170px] w-[60px] rounded-full bg-[#e1b3c9] py-2 hover:border hover:bg-[#f7b7d6]  flex justify-center text-[25px]"
-          >
+          <div className="mt-[170px] w-[60px] rounded-full bg-[#e1b3c9] py-2 hover:border hover:bg-[#f7b7d6]  flex justify-center text-[25px]">
             <ImExit />
           </div>
         )}
