@@ -1,9 +1,30 @@
 import images from "../../assets/undraw_add_notes_re_ln36.svg";
 import Typewriter from "typewriter-effect";
+import Input from "react-input-emoji";
+import { useSelector } from "react-redux";
+import { useState } from "react";
+import { useMutation } from "@tanstack/react-query";
+import { createTask } from "../../apis/taskAPI";
+import { QueryClient } from "@tanstack/react-query";
 const Task = () => {
+  const userID = useSelector((state: any) => state.userState);
+  const queryClient = new QueryClient();
+  const [tasked, setTasked] = useState<string>("");
+
+  const mutate = useMutation({
+    mutationKey: ["tasks"],
+    mutationFn: (data: any) => createTask(data, userID),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["tasks"] });
+    },
+  });
+
+  const onSubmit = () => {
+    mutate.mutate(tasked);
+  };
   return (
     <div className="">
-      <img src={images} className="fixed" />
+      <img src={images} className="fixed z-0" />
 
       <p className="text-right mr-5 text-[70px] absolute right-4 font-semibold text-white">
         Project.io
@@ -68,13 +89,13 @@ const Task = () => {
           <option>Low</option>
         </select>
         <br />
-        <select className="outline-none w-[40%] h-[35px] text-purple-400">
-          <option>Urgent</option>
-          <option>High</option>
-          <option>Low</option>
-        </select>
-        <br />
-        <label className="px-[35px] py-4 hover:bg-green-300 bg-rose-300 duration-300 transition-all hover:rounded-[30px] capitalize cursor-pointer">
+        <label
+          onClick={() => {
+            createTask(userID, tasked);
+            console.log(userID);
+          }}
+          className="px-[35px] py-4 hover:bg-green-300 bg-rose-300 duration-300 transition-all hover:rounded-[30px] capitalize cursor-pointer"
+        >
           assign task
         </label>
       </div>

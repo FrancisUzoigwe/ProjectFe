@@ -103,7 +103,7 @@ const AdminSigninPage = () => {
       </div>
       <div className="w-[850px] h-[100vh]  relative">
         <div className="absolute top-0 left-0 right-0">
-          <img src={pics} alt="Image 2" className="w-full" />
+          <img src={pics} alt="Image 2" className="w-[800px] fixed" />
         </div>
       </div>
     </div>
