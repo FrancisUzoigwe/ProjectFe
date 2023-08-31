@@ -79,17 +79,10 @@ const Task = () => {
             }}
           />
         </div>
-        <div className="w-[50%] caret-rose-400 font-Poppins">
-          <Input
-            cleanOnEnter
-            placeholder="assign task"
-            value={tasked}
-            onChange={setTasked}
-            onEnter={onSubmit}
-            className="my-5 w-[50%] font-Poppins z-1 placeholder:text-rose-400 border h-[40px] rounded outline-none pl-2 capitalize"
-          />
-        </div>
-
+        <input
+          placeholder="assign task"
+          className="my-5 w-[50%] caret-rose-400 placeholder:text-rose-400 border h-[40px] rounded outline-none pl-2 capitalize"
+        />
         <select className="outline-none w-[40%] h-[35px] text-purple-400">
           <option>Urgent</option>
           <option>High</option>
