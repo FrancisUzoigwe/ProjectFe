@@ -19,11 +19,7 @@ import AdminRoute from "./AdminRoute";
 export const mainRoute = createBrowserRouter([
   {
     path: "/",
-    element: (
-      <PrivateRoute>
-        <FirstLayout />
-      </PrivateRoute>
-    ),
+    element: <FirstLayout />,
     children: [
       {
         index: true,
@@ -82,7 +78,12 @@ export const mainRoute = createBrowserRouter([
   },
   {
     path: "/user-dashboard",
-    element: <UserLayout />,
+    element: (
+      <PrivateRoute>
+        <UserLayout />
+      </PrivateRoute>
+    ),
+
     children: [
       {
         index: true,
