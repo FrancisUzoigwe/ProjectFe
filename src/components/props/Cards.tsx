@@ -7,6 +7,7 @@ interface iProps {
   bigText?: string;
   smallText?: string;
 }
+
 const Cards: React.FC<iProps> = ({
   image,
   bg,
