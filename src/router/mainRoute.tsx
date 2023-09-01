@@ -15,7 +15,6 @@ import ViewTask from "../pages/screen/ViewTask";
 import Ask from "../pages/auth/Ask";
 import PrivateRoute from "./PrivateRoute";
 import AdminRoute from "./AdminRoute";
-// import AdminRoute from "./AdminRoute";
 
 export const mainRoute = createBrowserRouter([
   {
@@ -78,7 +77,7 @@ export const mainRoute = createBrowserRouter([
     ],
   },
   {
-    path: "/user-dashboard",
+    path: "/user",
     element: (
       <PrivateRoute>
         <UserLayout />
