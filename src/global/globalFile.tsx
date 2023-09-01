@@ -16,7 +16,7 @@ const globalFile = createSlice({
     adminState: (state, { payload }) => {
       state.admin = payload;
     },
-    changeToggle: (state, { payload }) => {
+    changeToggle: (state: any, { payload }) => {
       state.toggle = payload;
     },
     AdminlogOut: (state) => {

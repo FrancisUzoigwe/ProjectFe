@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 
 const AdminRoute: FC<PropsWithChildren> = ({ children }) => {
   const admin = useSelector((state: any) => state.admin);
-  return <div>{admin ? <div>{children}</div> : <Navigate to={`/ask`} />}</div>;
+  return <div>{admin ? <div>{children}</div> : <Navigate to={`/`} />}</div>;
 };
 
 export default AdminRoute;

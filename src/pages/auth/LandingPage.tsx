@@ -9,6 +9,7 @@ const LandingPage = () => {
   const Toggled = () => {
     setToggle(!toggle);
   };
+  
   return (
     <div className="w-full h-auto flex flex-col items-center bg-gradient-to-r from-purple-600 to-pink-300 transform rotate-38 ">
       <div className="mt-[70px] h-[auto] w-[90%]  flex justify-center ">

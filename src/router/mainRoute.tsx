@@ -15,15 +15,12 @@ import ViewTask from "../pages/screen/ViewTask";
 import Ask from "../pages/auth/Ask";
 import PrivateRoute from "./PrivateRoute";
 import AdminRoute from "./AdminRoute";
+// import AdminRoute from "./AdminRoute";
 
 export const mainRoute = createBrowserRouter([
   {
     path: "/",
-    element: (
-      <PrivateRoute>
-        <FirstLayout />
-      </PrivateRoute>
-    ),
+    element: <FirstLayout />,
     children: [
       {
         index: true,
@@ -82,7 +79,11 @@ export const mainRoute = createBrowserRouter([
   },
   {
     path: "/user-dashboard",
-    element: <UserLayout />,
+    element: (
+      <PrivateRoute>
+        <UserLayout />
+      </PrivateRoute>
+    ),
     children: [
       {
         index: true,

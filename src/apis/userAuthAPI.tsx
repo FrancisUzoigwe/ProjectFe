@@ -39,12 +39,19 @@ export const readUser = async () => {
 
 export const readOneUser = async (id: string) => {
   try {
-    return await axios
-      .get(`${URL}/${id}/view-one-user`)
-      .then((res: any) => {
-        console.log(id);
-        return res.data.data;
-      });
+    return await axios.get(`${URL}/${id}/view-one-user`).then((res: any) => {
+      return res.data.data;
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const getUserByNameAPI = async (name: string) => {
+  try {
+    return await axios.get(`${URL}/${name}/get-by-name`).then((res: any) => {
+      return res.data.data;
+    });
   } catch (error) {
     console.log(error);
   }

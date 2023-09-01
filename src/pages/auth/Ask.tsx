@@ -3,7 +3,7 @@ import myAdmin from "../../assets/undraw_heatmap_uyye.svg";
 
 const Ask = () => {
   return (
-    <div className="w-full h-[653px] bg-whiteA flex items-center justify-center bg-gradient-to-r from-purple-600 to-pink-300 transform rotate-38">
+    <div className="w-full h-[100vh] bg-whiteA flex items-center justify-center bg-gradient-to-r from-purple-600 to-pink-300 transform rotate-38">
       <div className="w-[95%]  h-[600px] flex justify-between items-center">
         <img src={myAdmin} alt="src" className="w-[800px]" />
         <div>

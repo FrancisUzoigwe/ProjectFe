@@ -41,7 +41,7 @@ const AdminSider = () => {
                   <img
                     src={data?.adminAvatar}
                     alt="p"
-                    className="w-[35px] h-[35px] rounded-md bg-green-200"
+                    className="w-[35px] object-cover h-[35px] rounded-md bg-green-200"
                   />
                   <div className="flex flex-col text-[13px] ml-2 flex-1 ">
                     <span>Hello Mr.{data?.adminName}</span>
@@ -65,7 +65,7 @@ const AdminSider = () => {
               <div>
                 <div>
                   <div
-                    key={data._id}
+                    key={data?._id}
                     className="hover:bg-[#e1b3c9] duration-300 w-8 my-2 items-center flex flex-col transition-all p-2 mr-1 rounded-md"
                   >
                     <BsArrow90DegRight
@@ -74,9 +74,9 @@ const AdminSider = () => {
                     />
                   </div>
                   <img
-                    src={data.adminAvatar}
+                    src={data?.adminAvatar}
                     alt="p"
-                    className="w-[35px] h-[35px] rounded-md bg-green-200"
+                    className="w-[35px] object-cover h-[35px] rounded-md bg-green-200"
                   />
                 </div>
               </div>
@@ -100,7 +100,7 @@ const AdminSider = () => {
           </Link>
         ) : (
           <Link to={`/access`}>
-            <div className="w-full py-2 text-[14px] cursor-pointer duration-300 transition-all mt-3 flex justify-center hover:bg-[#e1b3c9]">
+            <div className="w-[70px] py-2 text-[14px] cursor-pointer duration-300 transition-all mt-3 flex justify-center hover:bg-[#e1b3c9]">
               <BsClipboard2Data className="text-[30px]" />
             </div>
           </Link>
@@ -115,7 +115,7 @@ const AdminSider = () => {
           </Link>
         ) : (
           <Link to={`/access/view-task`}>
-            <div className="w-full py-2 text-[14px] cursor-pointer duration-300 transition-all mt-3 flex justify-center hover:bg-[#e1b3c9]">
+            <div className="w-[70px] py-2 text-[14px] cursor-pointer duration-300 transition-all mt-3 flex justify-center hover:bg-[#e1b3c9]">
               <CiViewList className="text-[30px]" />
             </div>
           </Link>
@@ -130,7 +130,7 @@ const AdminSider = () => {
           </Link>
         ) : (
           <Link to={`/access/ongoing`}>
-            <div className="py-2 w-full text-[14px] cursor-pointer duration-300 transition-all mt-3 flex justify-center hover:bg-[#e1b3c9]">
+            <div className="py-2 w-[70px] text-[14px] cursor-pointer duration-300 transition-all mt-3 flex justify-center hover:bg-[#e1b3c9]">
               <GiProgression className="text-[30px]" />
             </div>
           </Link>
@@ -145,7 +145,7 @@ const AdminSider = () => {
           </Link>
         ) : (
           <Link to={`/access/done`}>
-            <div className="py-2 w-full  text-[14px] cursor-pointer duration-300 transition-all mt-3 flex justify-center hover:bg-[#e1b3c9]">
+            <div className="py-2 w-[70px]  text-[14px] cursor-pointer duration-300 transition-all mt-3 flex justify-center hover:bg-[#e1b3c9]">
               <MdDoneAll className="text-[30px]" />
             </div>
           </Link>

@@ -1,12 +1,13 @@
 import { useQuery } from "@tanstack/react-query";
-import { viewTask } from "../apis/taskAPI";
 import { adminOneRead } from "../apis/adminAuthAPI";
 import { useSelector } from "react-redux";
+import { viewOneAdminTask, viewTask } from "../apis/taskAPI";
 
 export const useAdminTask = () => {
+  // const admin = useSelector((state: any) => state.admin);
   const { data, isLoading } = useQuery({
     queryKey: ["tasks"],
-    queryFn: viewTask,
+    queryFn: () => viewTask(),
   });
   return { data, isLoading };
 };

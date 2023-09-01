@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { readOneUser,readUser } from "../apis/userAuthAPI";
+import { getUserByNameAPI, readOneUser, readUser } from "../apis/userAuthAPI";
 import { useSelector } from "react-redux";
 
 export const useReadUser = () => {
@@ -8,14 +8,22 @@ export const useReadUser = () => {
     queryKey: ["users"],
     queryFn: () => readOneUser(user),
   });
-  console.log("read",user);
+  console.log("read", user);
   return { data, isLoading };
 };
 
 export const useReadAllUsers = () => {
   const { data, isLoading } = useQuery({
-    queryKey: ["users"],
+    queryKey: ["user"],
     queryFn: () => readUser(),
   });
   return { data, isLoading };
+};
+
+export const useUserByName = (name: string) => {
+  const { data: user, isLoading: isLoad } = useQuery({
+    queryKey: ["users"],
+    queryFn: () => getUserByNameAPI(name),
+  });
+  return { user, isLoad };
 };
