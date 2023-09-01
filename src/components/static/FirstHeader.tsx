@@ -8,6 +8,7 @@ const FirstHeader = () => {
     if (window.scrollY >= 40) {
       setScroll(true);
     } else {
+      
       setScroll(false);
     }
   };
