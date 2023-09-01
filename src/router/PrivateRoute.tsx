@@ -3,9 +3,11 @@ import { Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const PrivateRoute: React.FC<PropsWithChildren> = ({ children }) => {
-  const userState = useSelector((state: any) => state.userState);
+  const userState = useSelector((state: any) => state.user);
+  // console.log(userState);
+  
   return (
-    <div>{userState ? <div>{children}</div> : <Navigate to="/ask" />}</div>
+    <div>{userState ? <div>{children}</div> : <Navigate to="/user" />}</div>
   );
 };
 
