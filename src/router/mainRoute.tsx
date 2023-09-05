@@ -77,7 +77,7 @@ export const mainRoute = createBrowserRouter([
     ],
   },
   {
-    path: "/user",
+    path: "/user-dashboard",
     element: (
       <PrivateRoute>
         <UserLayout />
